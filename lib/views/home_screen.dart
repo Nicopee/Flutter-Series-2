@@ -12,28 +12,31 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-          title: Text(
-        'HomeScreen',
-        style: TextStyle(
-            color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-      )),
-      body: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (BuildContext context, index) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 100,
-                width: size.width,
-                color: Colors.green,
-                child: Column(
-                  children: [Text('Total Feed: 10'), Text('Feeds: 100')],
+        body: Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 70, right: 25, left: 25),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Icon(Icons.menu),
+              Container(
+                height: 60,
+                width: 60,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage(
+                        'https://cdn.pixabay.com/photo/2021/07/19/04/36/woman-6477171_1280.jpg'),
+                  ),
                 ),
-              ),
-            );
-          }),
-    );
+              )
+            ],
+          ),
+        )
+      ],
+    ));
   }
 }
 
@@ -107,6 +110,20 @@ class _HomeScreenState extends State<HomeScreen> {
 //               ),
 //             );
 //           }),
+//List view widget
+// ListView.builder(itemBuilder: (BuildContext context, index) {
+//         return Padding(
+//           padding: const EdgeInsets.all(8.0),
+//           child: Container(
+//             height: 100,
+//             width: size.width,
+//             color: Colors.green,
+//             child: const Column(
+//               children: [Text('Total Feed: 10'), Text('Feeds: 100')],
+//             ),
+//           ),
+//         );
+//       }),
 //Buttons
 //Scaffold
 //appBar
